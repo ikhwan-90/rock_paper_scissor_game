@@ -13,9 +13,8 @@ def play():
 
     if user == computer:
         return '=======================\n You draw! Try again?\n======================='
-
     #put win condition
-    if is_win(user, computer):
+    elif is_win(user, computer):
         return '=======================\n You won dude!\n======================='
     elif is_win(computer, user):
         return '=======================\n You lost!\n======================='
