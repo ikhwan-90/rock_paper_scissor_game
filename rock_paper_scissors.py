@@ -1,14 +1,21 @@
 import random
 
 def rules():
-    gameRule = "Game rules \n Only input from available options - \n \
-r - Rock \n p - Paper \n s - Scissor \n q - quit the game \n rules - Display game rules"
+    gameRule = " ||=====================================||\n \
+||             Game rules              ||\n \
+|| Only input from available options - ||\n \
+|| r - Rock                            ||\n \
+|| p - Paper                           ||\n \
+|| s - Scissor                         ||\n \
+|| q - quit the game                   ||\n \
+|| rules - Display game rules          ||\n \
+||=====================================||"
     return gameRule
 
 def play():
     user = input("Choose your hand:\n'r': rock, 'p': paper, 's': scissor \n")
     while inputCheck(user) != True:
-        user = input("=======================\nChoose available hand: r, s, p \n")
+        user = input("=======================\nChoose available hand:\n 'r': rock, 'p': paper, 's': scissor\n")
     computer = random.choice(['r', 'p', 's'])
 
     if user == computer:
@@ -31,6 +38,7 @@ def inputCheck(userTyped):
         print(rules())
         return
     elif userTyped not in validInput:
+        print("Not a valid input.")
         return False 
     return True
 
